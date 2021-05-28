@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BloodMeasure</string>
+    <string name="name">Név</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="cancel">Mégse</string>
+    <string name="password_again">Jelszó újra</string>
+    <string name="email_address">Email cím</string>
+    <string name="user_name">Felhasználó név</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1223156415",
+    "project_id": "androidmeasure",
+    "storage_bucket": "androidmeasure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1223156415:android:3820062a8cd8905b26dc0a",
+        "android_client_info": {
+          "package_name": "com.example.bloodmeasure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1223156415-hcf2nd1ltkaabm4nbdle96co518qc4ge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bloodmeasure",
+            "certificate_hash": "9c073ccbe153247479fa72e9b7e306fc3977a5b8"
+          }
+        },
+        {
+          "client_id": "1223156415-7q6nck0g7glgt4m3udurg31geiiep19h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkKByah5xRx-K4f3i9utB02w1f_-z77JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1223156415-7q6nck0g7glgt4m3udurg31geiiep19h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
