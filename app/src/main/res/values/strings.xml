@@ -8,4 +8,67 @@
     <string name="password_again">Jelszó újra</string>
     <string name="email_address">Email cím</string>
     <string name="user_name">Felhasználó név</string>
+    <string name="measured_placeholder">Mérés eredménye</string>
+    <string name="device_placeholder">Mérőeszköz</string>
+    <string name="doctor_placeholder">Kezelőorvos neve</string>
+    <string name="last_placeholder">Utolsó méré óta eltelt órák</string>
+    <string name="condition_placeholder">Volt-e rosszul azóta</string>
+    <string name="date_placeholder">Mérés dátuma</string>
+    <string name="comment_placeholder">Megjegyzés</string>
+    <string name="name_placeholder">Páciens Neve</string>
+
+    <string-array name="measure_item_picture">
+        <item>@drawable/one</item>
+        <item>@drawable/two</item>
+        <item>@drawable/there</item>
+    </string-array>
+
+    <string-array name="measure_item_measured">
+        <item>6,1</item>
+        <item>6,5</item>
+        <item>7,8</item>
+    </string-array>
+
+    <string-array name="measure_item_davice">
+        <item>Mobileszköz</item>
+        <item>Kórházi eszköz</item>
+        <item>Korházi eszköz</item>
+    </string-array>
+
+    <string-array name="measure_item_doctor">
+        <item>Dr. Szia Lajos</item>
+        <item>Dr. Ne Pál</item>
+        <item>Dr. Ovuvuevuevue Enyetuenwuevue Ugbemugbem Osas</item>
+    </string-array>
+
+    <string-array name="measure_item_since">
+        <item>2</item>
+        <item>10</item>
+        <item>32</item>
+    </string-array>
+
+    <string-array name="measure_item_condition">
+        <item>Nem</item>
+        <item>Nem</item>
+        <item>Igen</item>
+    </string-array>
+
+    <string-array name="measure_item_date">
+        <item>2021.04.10</item>
+        <item>2020.12.18</item>
+        <item>2021.06.05</item>
+    </string-array>
+
+    <string-array name="measure_item_comment">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+
+    <string-array name="measure_item_patientName">
+        <item>Kis Kinga</item>
+        <item>Vétresz Anett</item>
+        <item>Géming Pécé</item>
+    </string-array>
+
 </resources>

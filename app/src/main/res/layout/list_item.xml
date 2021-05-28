@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/patienteImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/measured"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patienteImage"
+            android:padding="8dp"
+            android:text="@string/measured_placeholder"
+            android:textColor="?android:textColorSecondary" />
+
+
+
+        <TextView
+            android:id="@+id/device"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/measured"
+            android:padding="8dp"
+            android:text="@string/device_placeholder" />
+
+        <TextView
+            android:id="@+id/doctorsName"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/device"
+            android:padding="8dp"
+            android:text="@string/doctor_placeholder" />
+
+        <TextView
+            android:id="@+id/sincLastMeasure"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorsName"
+            android:padding="8dp"
+            android:text="@string/last_placeholder" />
+
+        <TextView
+        android:id="@+id/condition"
+        style="@style/ItemDetailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sincLastMeasure"
+        android:padding="8dp"
+        android:text="@string/condition_placeholder" />
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/condition"
+            android:padding="8dp"
+            android:text="@string/date_placeholder" />
+        <TextView
+            android:id="@+id/comment"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:padding="8dp"
+            android:text="@string/comment_placeholder" />
+
+        <TextView
+            android:id="@+id/patienteName"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/comment"
+            android:padding="8dp"
+            android:text="@string/name_placeholder" />
+
+
+
+        <Button
+            android:id="@+id/add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patienteName"
+            android:text="Kosárba"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
