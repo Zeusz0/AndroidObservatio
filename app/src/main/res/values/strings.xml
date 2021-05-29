@@ -16,6 +16,7 @@
     <string name="date_placeholder">Mérés dátuma</string>
     <string name="comment_placeholder">Megjegyzés</string>
     <string name="name_placeholder">Páciens Neve</string>
+    <string name="delete">Törlés</string>
 
     <string-array name="measure_item_picture">
         <item>@drawable/one</item>

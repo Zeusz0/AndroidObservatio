@@ -89,14 +89,21 @@
             android:text="@string/name_placeholder" />
 
 
-
-        <Button
-            android:id="@+id/add_to_cart"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/patienteName"
-            android:text="Kosárba"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            >
+
+            <Button
+                android:id="@+id/add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"/>
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
