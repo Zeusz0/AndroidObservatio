@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "1223156415",
-    "project_id": "androidmeasure",
-    "storage_bucket": "androidmeasure.appspot.com"
+    "project_number": "565400183367",
+    "project_id": "androidbloodmeasure",
+    "storage_bucket": "androidbloodmeasure.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1223156415:android:3820062a8cd8905b26dc0a",
+        "mobilesdk_app_id": "1:565400183367:android:a5d246ddc2c4dec4654762",
         "android_client_info": {
           "package_name": "com.example.bloodmeasure"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1223156415-hcf2nd1ltkaabm4nbdle96co518qc4ge.apps.googleusercontent.com",
+          "client_id": "565400183367-4aelj09oqtt5aba11ghms30kot6756cs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.bloodmeasure",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "1223156415-7q6nck0g7glgt4m3udurg31geiiep19h.apps.googleusercontent.com",
+          "client_id": "565400183367-eatlats9n0m2cjiq44p9krbhsqdqn2bs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkKByah5xRx-K4f3i9utB02w1f_-z77JY"
+          "current_key": "AIzaSyCEB-3gg0z4qT36vIav6ZW0CnsHTKTI1gE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1223156415-7q6nck0g7glgt4m3udurg31geiiep19h.apps.googleusercontent.com",
+              "client_id": "565400183367-eatlats9n0m2cjiq44p9krbhsqdqn2bs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

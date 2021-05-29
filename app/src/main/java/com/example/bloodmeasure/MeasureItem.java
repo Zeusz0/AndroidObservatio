@@ -27,14 +27,6 @@ public class MeasureItem {
         this.patienteName = patienteName;
     }
 
-    public String getPatienteName() {
-        return patienteName;
-    }
-
-    public void setPatienteName(String patienteName) {
-        this.patienteName = patienteName;
-    }
-
     public int getPatienteImageResource() {
         return patienteImageResource;
     }
@@ -43,55 +35,31 @@ public class MeasureItem {
         return measured;
     }
 
-    public void setMeasured(String measured) {
-        this.measured = measured;
-    }
-
     public String getDevice() {
         return device;
-    }
-
-    public void setDevice(String device) {
-        this.device = device;
     }
 
     public String getDoctorsName() {
         return doctorsName;
     }
 
-    public void setDoctorsName(String doctorsName) {
-        this.doctorsName = doctorsName;
-    }
-
     public String getSincLastMeasure() {
         return sincLastMeasure;
-    }
-
-    public void setSincLastMeasure(String sincLastMeasure) {
-        this.sincLastMeasure = sincLastMeasure;
     }
 
     public String getCondition() {
         return condition;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
     public String getDate() {
         return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getComment() {
         return comment;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public String getPatienteName() {
+        return patienteName;
     }
 }

@@ -32,6 +32,25 @@ public class MeasureItemAdapter extends RecyclerView.Adapter<MeasureItemAdapter.
     }
 
     @Override
+    public MeasureItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder( MeasureItemAdapter.ViewHolder holder, int position) {
+        MeasureItem currentItem = mMeasureItemsData.get(position);
+
+        holder.bindTo(currentItem);
+
+
+        if(holder.getAdapterPosition() > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
+            holder.itemView.startAnimation(animation);
+            lastPosition = holder.getAdapterPosition();
+        }
+    }
+
+    @Override
     public Filter getFilter() {
         return measureFilter;
     }
@@ -71,26 +90,6 @@ public class MeasureItemAdapter extends RecyclerView.Adapter<MeasureItemAdapter.
         }
     };
 
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false));
-    }
-
-    @Override
-    public void onBindViewHolder( MeasureItemAdapter.ViewHolder holder, int position) {
-        MeasureItem currentItem = mMeasureItemsData.get(position);
-
-        holder.bindTo(currentItem);
-
-
-        if(holder.getAdapterPosition() > lastPosition) {
-            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
-            holder.itemView.startAnimation(animation);
-            lastPosition = holder.getAdapterPosition();
-        }
-    }
-
     @Override
     public int getItemCount() {
         return mMeasureItemsData.size();
@@ -114,7 +113,7 @@ public class MeasureItemAdapter extends RecyclerView.Adapter<MeasureItemAdapter.
             mItemImage = itemView.findViewById(R.id.patienteImage);
             mMeasured =itemView.findViewById(R.id.measured);
             mDevicedoctorsName =itemView.findViewById(R.id.device);
-            mDoctor =itemView.findViewById(R.id.device);
+            mDoctor =itemView.findViewById(R.id.doctorsName);
             mSincLastMeasure =itemView.findViewById(R.id.sincLastMeasure);
             mCondition =itemView.findViewById(R.id.condition);
             mDate =itemView.findViewById(R.id.date);

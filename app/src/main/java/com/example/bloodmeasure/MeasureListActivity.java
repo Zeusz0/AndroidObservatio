@@ -6,16 +6,37 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SearchView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -28,9 +49,16 @@ public class MeasureListActivity extends AppCompatActivity {
     private ArrayList<MeasureItem> mItemsData;
     private MeasureItemAdapter mAdapter;
 
+    private FirebaseFirestore mFirestore;
+    private CollectionReference mItems;
+
     private boolean viewRow = true;
 
     private int gridNumber = 1;
+
+    private Integer itemLimit = 5;
+
+    private int Done=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +84,59 @@ public class MeasureListActivity extends AppCompatActivity {
         // Initialize the adapter and set it to the RecyclerView.
         mAdapter = new MeasureItemAdapter(this, mItemsData);
         mRecyclerView.setAdapter(mAdapter);
+
+        mFirestore = FirebaseFirestore.getInstance();
+        mItems = mFirestore.collection("Items");
         // Get the data.
-        initializeData();
+        queryData();
+//
+//        IntentFilter filter = new IntentFilter();
+//        filter.addAction(Intent.ACTION_POWER_CONNECTED);
+//        filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+//        this.registerReceiver(powerReceiver, filter);
     }
+
+    private void queryData(){
+        mItemsData.clear();
+        Log.d(LOG_TAG,"Query meghívva");
+
+        mItems.orderBy("patienteName").get().addOnSuccessListener(queryDocumentSnapshots -> {
+            for(QueryDocumentSnapshot document : queryDocumentSnapshots){
+                MeasureItem item = document.toObject(MeasureItem.class);
+                mItemsData.add(item);
+            }
+
+            if(mItemsData.size() == 0){
+                queryData();
+                initializeData();
+            }
+            mAdapter.notifyDataSetChanged();
+        });
+
+    }
+
+//    BroadcastReceiver powerReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            String intentAction = intent.getAction();
+//
+//            if (intentAction == null)
+//                return;
+//
+//            switch (intentAction) {
+//                case Intent.ACTION_POWER_CONNECTED:
+//                    itemLimit = 10;
+//                    queryData();
+//                    break;
+//                case Intent.ACTION_POWER_DISCONNECTED:
+//                    itemLimit = 5;
+//                    queryData();
+//                    break;
+//            }
+//        }
+//    };
+
+
 
     private void initializeData() {
         String[] itemsMeasured = getResources().getStringArray(R.array.measure_item_measured);
@@ -71,12 +149,9 @@ public class MeasureListActivity extends AppCompatActivity {
         String[] itemsName = getResources().getStringArray(R.array.measure_item_patientName);
         TypedArray itemsImageResources = getResources().obtainTypedArray(R.array.measure_item_picture);
 
-        mItemsData.clear();
-
-        // Create the ArrayList of Sports objects with the titles and
-        // information about each sport.
         for (int i = 0; i < itemsMeasured.length; i++) {
-            mItemsData.add(new MeasureItem( itemsImageResources.getResourceId(i, 0),
+            mItems.add(new MeasureItem(
+                    itemsImageResources.getResourceId(i, 0),
                     itemsMeasured[i],
                     itemsDevice[i],
                     itemsDoctor[i],
@@ -84,16 +159,13 @@ public class MeasureListActivity extends AppCompatActivity {
                     itemsCondition[i],
                     itemsdate[i],
                     itemsComment[i],
-                    itemsName[i]
-            ));
+                    itemsName[i] ));
         }
 
-        // Recycle the typed array.
         itemsImageResources.recycle();
-
-        // Notify the adapter of the change.
-        mAdapter.notifyDataSetChanged();
+        //mAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
