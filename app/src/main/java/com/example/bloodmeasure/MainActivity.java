@@ -110,17 +110,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         // Log.i(LOG_TAG, "Bejelentkezett: " + userName + ", jelszó: " + password);
 
-        mAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Log.d(LOG_TAG, "Login done!");
-                    goShopping();
-                } else {
-                    Toast.makeText(MainActivity.this, "Invalid email or password!", Toast.LENGTH_LONG).show();
+        if(!userName.equals("")&&!password.equals("")){
+            mAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Log.d(LOG_TAG, "Login done!");
+                        goShopping();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Invalid email or password!", Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+
+        }
     }
 
     public void loginAsGuest(View view) {

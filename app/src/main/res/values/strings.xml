@@ -17,6 +17,11 @@
     <string name="comment_placeholder">Megjegyzés</string>
     <string name="name_placeholder">Páciens Neve</string>
     <string name="delete">Törlés</string>
+    <string name="addPatient">Beteg Hozzáadása</string>
+    <string name="create">Hozzáadás</string>
+    <string name="edit">Beteg Módosítása</string>
+    <string name="addText">Hozzáadás</string>
+    <string name="editText">Módosítás</string>
 
     <string-array name="measure_item_picture">
         <item>@drawable/one</item>

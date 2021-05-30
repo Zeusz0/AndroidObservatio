@@ -1,6 +1,7 @@
 package com.example.bloodmeasure;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,12 +121,12 @@ public class MeasureItemAdapter extends RecyclerView.Adapter<MeasureItemAdapter.
             mComment =itemView.findViewById(R.id.comment);
             mPatienteName = itemView.findViewById(R.id.patienteName);
 
-            itemView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //((MeasureListActivity)mContext).updateAlertIcon();
-                }
-            });
+//            itemView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //((MeasureListActivity)mContext).updateAlertIcon();
+//                }
+//            });
         }
 
         public void bindTo(MeasureItem currentItem) {
@@ -141,7 +142,12 @@ public class MeasureItemAdapter extends RecyclerView.Adapter<MeasureItemAdapter.
             mComment.setText(currentItem.getComment());
             mPatienteName.setText(currentItem.getPatienteName());
 
+            itemView.findViewById(R.id.delete).setOnClickListener(view -> ((MeasureListActivity)mContext).deleteItem(currentItem));
+            itemView.findViewById(R.id.Add).setOnClickListener(view ->((MeasureListActivity)mContext).addMeasureForm());
+            itemView.findViewById(R.id.Edit).setOnClickListener(view ->((MeasureListActivity)mContext).editMeasure(currentItem));
+
         }
     }
+
 
 }
